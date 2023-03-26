@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% load static %}
+{% block body %}
+
+<!-- <div id="container" style="position: relative">
+  <div class="iframe-container">
+   <iframe
+      src="https://embed.vntana.com?productUuid=219198c2-2be5-4248-905e-eab29c5c3e35&clientSlug=vntana-marketing&organizationSlug=vntana-tech-test-02"
+      width="400" height="250" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>  -->
+{% for iframe in iframe_codes %}
+<div class="iframe-container">
+  {{ iframe|safe }}
+</div>
+<div class="code-container" style="position:relative; bottom:450px;">
+  Embed code:-
+  <pre>{{ iframe }}</pre>
+</div>
+{% endfor %}
+
+{% endblock body %}
